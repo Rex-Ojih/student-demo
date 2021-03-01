@@ -17,20 +17,20 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    //@GetMapping allows function to receive get requests from client
+    //@GetMapping allows function to receive GET requests from client
     @GetMapping
     public List<Student> getStudents() {
         return studentService.getStudents();
     }
 
-    //@PostMapping allows function to receive post requests from client
+    //@PostMapping allows function to receive POST requests from client
     @PostMapping
     //@RequestBody takes the JSON body from the request and maps it to Student object
     public void registerNewStudent(@RequestBody Student student) {
         studentService.addNewStudent(student);
     }
 
-    //@DeleteMapping allows function to receive delete requests from client at url ending with student id
+    //@DeleteMapping allows function to receive DELETE requests from client at url ending with student id
     //@PathVariable maps the variable from the url path to the 'studentId' variable
     //Example: http://localhost:8080/api/v1/student/{studentId}
     //@RequestParam maps the variables given by client in url denoted by '?' to corresponding parameters of function
